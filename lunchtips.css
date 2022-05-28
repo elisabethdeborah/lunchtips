@@ -1,0 +1,925 @@
+:root {
+    --solfärg: #da995d;
+    --bakgrundsblå: #48bcd959;
+    --accentlila: #c15dd9;
+    --accentorange: #ff9706;
+    --accentblå: #32b7d9;
+    --accentgrön: #9ad93d;
+    --grå: #535353;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+   background-color: var(--bakgrundsblå);
+   background-color: white;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100vw;
+    scroll-behavior: smooth;
+}
+
+#navbar{
+    width: 100%;
+    background-color: var(--grå);
+    margin: 0;
+    position: fixed;
+    top:0px;
+    z-index: 4000;  
+    display: flex;
+    justify-content: space-around;
+}
+.nav-logga {
+    height: 40px;
+    width: auto;
+    transition: transform 3s ease-out 0s;
+}
+
+.nav-logga:hover {
+    transform: rotate3d(0,1,2,360deg); 
+    transform: rotate(360deg); 
+    transform-origin: 50%;
+}
+
+
+
+ .nav-logga:hover .navbar__nav-logga__circle, .nav-logga:hover .navbar__nav-logga__ray1, .nav-logga:hover .navbar__nav-logga__ray2, .nav-logga:hover .navbar__nav-logga__ray3, .nav-logga:hover .navbar__nav-logga__ray4, .nav-logga:hover .navbar__nav-logga__ray5, .nav-logga:hover .navbar__nav-logga__ray6, .nav-logga:hover .navbar__nav-logga__ray7, .nav-logga:hover .navbar__nav-logga__ray8 {
+     fill: var(--accentblå);
+     transition: fill 2s linear;
+}
+
+
+.nav-logga-länk {
+    height: 40px;
+    width: auto;
+    margin-left: 10%;
+    align-self: center;
+}
+
+#navbar>ul{
+    width: 75%;
+    list-style: none;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline-start: 0px !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-länk{
+    color:white;
+    text-decoration: none;
+    font-weight: 100;
+    transition: all .25s ease-in .01s;
+}
+
+.navbar-länk:hover{
+    color: var(--accentorange);
+    font-weight: 900;
+    color: linear-gradient(to right, rgba(255,151,6,1) 0%, rgba(255,151,6,1) 10%, rgba(255,81,0,1) 63%, rgba(255,81,0,1) 100%);
+}
+
+.aktuell-sida{
+    color: var(--accentblå);
+    font-weight: 400;
+    border-bottom: 1px solid var(--accentblå);
+}
+
+#navbar-mindre{
+    display: none;
+}
+
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 150px 0 0;
+    z-index: 1;
+    width: 80%;
+    background-color: white;
+}
+
+.header__restauranger {
+    padding-bottom: 50px;
+}
+
+
+
+h1{
+    font-weight: 300;
+    font-size: 8vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+    margin: 0;
+    color: var(--accentblå);
+    animation-name: rubrik-in;
+    animation-duration: 2s;
+    animation-iteration-count: 1; 
+}
+ 
+@keyframes rubrik-in {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0vw);
+    }
+}
+ 
+main{
+    height: 100%; 
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.blå {
+    background-color: var(--bakgrundsblå);
+    transition: all 1s ease;
+}
+
+.vit{
+    background-color: white;
+}
+
+.dölj {
+    display: none;
+}
+
+.väder-bakgrund, .väder-bakgrund-imorgon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px auto;
+    padding-top: 50px;
+}
+
+
+img#prognos-bild{
+    z-index: 1;
+    position: relative;
+    margin: 0px auto;
+    width: 50%;
+    filter: brightness(1);
+    transition: all 2s ease;
+    animation-name: väder-in;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    z-index: 999;
+    height: 250px;
+    width: auto;
+}
+
+ svg>ellipse {
+    transition: all 2s ease;
+}
+svg>ellipse:hover {
+    fill: rgb(68, 67, 67);
+} 
+
+@keyframes väder-in {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
+
+.tid{
+    display: none;
+}
+ 
+.tips-restaurang{
+    position: relative;
+    background-color: white;
+    margin: 100px 0;
+}
+
+#restauranger-rubrik{
+    z-index: 1;
+    margin: 0 auto 15px; 
+    width: 80%;
+    max-width: 1000px;
+    height: 100px;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    background-color: var(--accentorange);
+}
+
+#yes-restauranger{
+    position: relative;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 90px;
+    gap: 10px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 0;
+    font-size: 20px;
+}
+
+#yes-restauranger > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#yes-restauranger .restaurang-länk{
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accentblå);
+    transition: border 100ms, background-color 1s ease, color 1s ease;
+}
+
+#yes-restauranger>li a:hover, .restaurang-länk:hover{
+    background-color: white;
+    color: var(--accentblå);
+    border: 2px solid var(--accentblå);
+}
+
+#yes-restauranger>li a:active, .restaurang-länk:active{
+    transform: translate(2px, 3px);
+    transition-duration: 1ms;
+    border-left: 2px inset #8a8a8b;
+    border-top: 3px inset #8a8a8b;
+}
+#info-restauranger{
+    margin: 20px auto;
+    width: 100%;
+    min-width: 500px;
+} 
+
+#info{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0 50px;
+    position: absolute;
+    z-index: 3000;
+    width: 450px;
+    margin: 0 calc(50vw - 225px);
+    transition: 3s ease;
+    top:110px;
+    background-color: white;
+    color: var(--grå);
+    border-radius: 10px;
+    box-shadow: 2px 20px 50px #000000;
+}
+
+#info>li{
+    padding: 10px;
+    font-size: 20px;
+}
+
+#info>li>a{
+    text-decoration: none;
+    color: grey;
+}
+.delete-container {
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-right: 50px;
+}
+#delete{
+    text-decoration: none;
+    background-color:grey;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    color: white !important;
+    padding: 5px;
+    line-height: 10px;
+    font-size: 16px;
+}
+
+#delete:hover {
+    background-color: rgb(250, 48, 145);
+}
+
+.restaurang-namn {
+    color: var(--accentgrön);
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+#info .restaurang-src, #info .restaurang-src > a {
+    font-size:12px; 
+    margin-top: 10px;
+}
+
+.välja{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin: 0;
+    padding: 100px 0px 190px;
+    background-color: white;
+    background-color: var(--bakgrundsblå);
+    position: relative;
+}
+
+.slump-rubrik{
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 40px;
+    color: var(--grå);
+}
+
+#slump-restaurang{
+font-size: 40px;
+color: #5f5e5e;
+top: 270px;
+position: absolute;
+text-align: center;
+}
+
+.slumpa-knapp, .header__vädret-nu-knapp {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    padding:10px;
+    color: var(--accentorange);
+    border: 2px solid var(--accentorange);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+}
+.header__vädret-nu-knapp {
+    margin: 20px 0;
+    width: fit-content;
+    align-self: center;
+    animation-name: rubrik-in;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.slumpa-knapp:hover, .header__vädret-nu-knapp:hover {
+    background-color: var(--accentorange);
+    transition-duration: 250ms;
+    color: white;
+}
+
+.slumpa-knapp:focus, .header__vädret-nu-knapp:focus { 
+    outline: none;
+}
+
+.slumpa-knapp:active, .header__vädret-nu-knapp:active {
+    transform: translate(0px, 4px);
+    box-shadow: inset 0px 4px 4px #535353; 
+    border-top: 2px solid #535353; 
+    border-left: 1px solid #535353; 
+    border-right: 1px solid #535353;
+    transition-duration: 1ms;
+}
+.dagens-väder-synligt {
+    transform: translateX(0vw);
+    height: initial;
+    background-color:#48bcd959;
+}
+
+.dagens-väderbakgrund-synligt {
+    background-color:#48bcd959;
+}
+
+
+.karta{
+    position: relative;
+    width: 500px;
+    margin:50px auto 100px;
+}
+
+#mapid { 
+    display: inline-block;
+    position: relative;
+    height: 300px;
+    width: 500px; 
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+    opacity: 0.85;
+    border: 1px solid var(--bakgrundsblå);
+    text-align: center;
+    z-index: 3000;
+}
+
+h3{
+    padding:0;
+    margin:0;
+    text-align: center;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.view{
+    display: none;
+}
+
+ .leaflet-popup-content p {
+    margin: 0px 0 !important;
+    text-align:center !important;
+    vertical-align: middle !important;
+}
+
+.footer-container{
+    width: 100%;
+    background-color: var(--bakgrundsblå);
+}
+
+.footer-länkar{
+    padding: 10%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.footer-länk{
+    color: var(--grå);
+    text-decoration: none;
+}
+
+
+#alla-info{
+    margin: 0px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 35px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+#alla-info>div{
+    box-shadow: 3px 10px 10px rgba(0,0,0,0.75);
+    background-color: white;
+    padding: 60px 0px 40px 0px;
+    border-radius: 10px;
+    background-color: #48bcd927;
+}
+#alla-info>div:hover{
+    filter: contrast(1.5);
+    transition-duration: 250ms;
+    transition-delay: 100ms;
+    cursor: pointer;
+}
+
+#alla-info>div>div{
+    text-align: center;
+    padding: 10px;
+    color: var(--grå);
+    font-size: 18px;
+}
+
+#alla-info>div>div>a{
+    text-decoration: none;
+    color: #8a8a8b;
+}
+#namn-rubrik{
+    font-size: 20px;
+}
+
+
+.grid-container-1, .grid-container-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 90px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    color: var(--grå);
+    text-align: center;
+    gap: 10px;
+}
+
+
+.item {
+    transition: background-color 300ms ease-in-out, border 250ms linear;
+} 
+
+
+.item-1, .item2-1 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+
+.item-3 , .item2-3{
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.item-4, .item2-4 {
+    grid-column: 1;
+    grid-row: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: var(--accentorange);
+    color: white;
+}
+
+.item-5, .item2-5 {
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: var(--accentorange);
+    color: white;
+}
+.item-6, .item2-6 {
+    grid-column: 3;
+    grid-row: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: var(--accentorange);
+    color: white;
+}
+.item-7, .item2-7 {
+    grid-column: 1;
+    grid-row: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color:  rgb(212, 211, 211);
+}
+
+
+.item-4:hover ~ .item-7, .item-5:hover ~.item-8, .item-6:hover ~.item-9, .item2-4:hover ~ .item2-7, .item2-5:hover ~ .item2-8, .item2-6:hover ~ .item2-9 {
+    background-color: white;
+    border: 2px solid lightgray;
+}
+.item-8, .item2-8 {
+    grid-column: 2;
+    grid-row: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color:  rgb(212, 211, 211);
+}
+.item-9, .item2-9 {
+    grid-column: 3;
+    grid-row: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color:  rgb(212, 211, 211);
+}
+
+
+
+/* OM-SIDA */
+.om-lunchtips{
+    width: 75%;
+    max-width: 1000px;
+    margin: 10px auto 100px;
+    color: var(--grå);
+    
+}
+#första-p {
+    color: var(--accentorange);
+    font-weight: 400;
+    font-size: 30px;
+    padding:10px;
+    line-height: 30px;
+    text-align: center;
+} 
+
+.övriga-p{
+    padding:10px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 200;
+}
+
+
+@media screen and (max-width: 600px) {
+
+header {
+
+    padding: 160px 0px 30px;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 90px;
+    text-align: center;
+}
+
+
+.blå {
+    background-color: white;
+}
+.väder-bakgrund {
+    padding-bottom: 50px;
+}
+.väder-bakgrund-imorgon{
+    background-color: var(--accentblå);
+    padding-top: 50px;
+}
+.grid-container-1, .grid-container-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    background-color: white;
+    color: grey;
+    text-align: center;
+    gap: 0;
+}
+
+ .item:nth-child(n+4):nth-child(-n+6){
+    font-size: 30px;
+}
+.item:nth-child(n+7):nth-child(-n+9) {
+   font-size: 20px;
+   align-items: flex-start;
+   padding-top: 5px;
+} 
+
+
+.item-1, .item2-1 {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 35px;
+    background-color: var(--accentblå);
+    color: white;
+}
+
+.item-3, .item2-3 {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1rem;
+    font-size: 25px;
+    background-color: var(--accentblå);
+    color: white;
+}
+
+.item-4, .item2-4 {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--grå);
+}
+.item-5, .item2-5 {
+    grid-column: 1;
+    grid-row: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--grå);
+    background-color: white;
+
+    color: var(--grå);
+    background-color: var(--bakgrundsblå);
+}
+.item-6, .item2-6 {
+    grid-column: 1;
+    grid-row: 7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--grå);
+    background-color: white;
+}
+.item-7, .item2-7 {
+    grid-column: 1;
+    grid-row: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--grå);
+    background-color: white;
+    
+}
+.item-8, .item2-8 {
+    grid-column: 1;
+    grid-row: 6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--grå);
+    background-color: var(--bakgrundsblå);
+}
+.item-9, .item2-9 {
+    grid-column: 1;
+    grid-row: 8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--grå);
+}
+
+ 
+.tips-restaurang{
+    position: static;
+    background-color: white;
+    margin: 0;
+    transition: all .3s ease-in;
+}
+
+#restauranger-rubrik {
+    width: 100%;
+    margin-bottom: 0;
+    height: 150px;
+}
+#yes-restauranger{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 150px;
+    gap: 0;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 0;
+    font-size: 20px;
+}
+
+#yes-restauranger .restaurang-länk {
+    background-color: white;
+    color: var(--grå);
+    flex-direction: column;
+}
+#yes-restauranger .restaurang-länk::after {
+    border-left: 6px solid var(--accentblå);
+    border-bottom: 6px solid var(--accentblå);
+    border-bottom-left-radius: 5px;
+    content: ' ';
+    height: 30px;
+    width: 30px;
+    transform:rotate(-45deg);
+    position: relative;
+}
+
+#yes-restauranger>li a:active, .restaurang-länk:active{
+    transform: none;
+}
+
+#info{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0 50px;
+    position: absolute;
+    position: fixed; 
+    z-index: 3000;
+    width: 90%;
+    margin: 0 auto;
+    transition: 3s ease;
+    top:110px;
+    left: 5%;
+    background-color: white;
+    color: var(--grå);
+    border-radius: 10px;
+    box-shadow: 2px 20px 50px #000000;
+
+}
+#alla-info{
+    margin: 0px auto 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 35px;
+}
+
+
+.slumpa-knapp {
+    background-color: var(--accentorange);
+    transition-duration: 250ms;
+    color: white;
+}
+
+.karta {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+#mapid {
+    display: inline-block;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 5px;
+}
+.footer-länkar {
+    margin: 0;
+    padding: 100px 0;
+    background-color: white;
+}
+
+
+/* OM-SIDA */
+.om-lunchtips{
+    width: 100%;
+    margin: 10px auto 100px;
+    color: var(--grå);
+}
+#första-p {
+    background-color: var(--accentorange);
+    font-weight: 400;
+    color: white;
+    width: 100%;
+    padding: 2rem 3rem;
+    line-height: 2.5rem;
+    margin: 0;
+} 
+
+.övriga-p {
+    padding: 2rem 3rem;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.om-lunchtips > p:nth-child(even){
+    background-color: #e0dede;
+}
+} 
+
